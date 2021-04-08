@@ -1,0 +1,3 @@
+/var/www/html/amisha_bck/new2.txt
+/var/www/html/amishabck14032021/new2.txt
+/var/www/html/amisha/new2.txt

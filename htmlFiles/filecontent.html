@@ -1,0 +1,46 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+    <title>path-content</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/demo/css/filepath-style.css">
+</head>
+<body>
+        <div id="container">
+<input id="name" name="name" type="text" placeholder="filename">
+<input type="submit" id="content" value="content"  class="btn btn-primary">
+        </div>
+
+
+	<div id="filecontent">
+        </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+
+$('#content').click(function(){
+          $b= document.getElementById("name").value;
+
+            $.ajax
+            ({
+                url: '/demo/php/file-content.php',  //replace with your own url
+                data: {"eid": $b},
+                type: 'POST',
+                success: function(result)
+                {
+                     $("#filecontent").html(result);
+                }
+            });
+        });
+
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
